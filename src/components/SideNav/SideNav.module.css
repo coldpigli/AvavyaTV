@@ -13,6 +13,8 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--space-xs);
+    color: var(--font-gray);
+    transition: 300ms ease;
 }
 
 .navTitle{
@@ -20,6 +22,12 @@
     margin-left: 1rem;
 }
 
+:global .active {
+    color: var(--font-primary);
+    background-color: var(--color-pop-2);
+    padding: var(--space-xs);
+    border-radius: 0.5rem;
+}
 
 @media only screen and (min-width: 600px){
     .sidenav{

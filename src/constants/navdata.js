@@ -25,7 +25,7 @@ const navdata = [
     },
     {
         id: 5,
-        title: "Watch Later",
+        title: "Later",
         icon: "watch_later",
         nextUrl: "/watchlater"
     },

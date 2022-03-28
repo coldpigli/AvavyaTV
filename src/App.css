@@ -26,7 +26,9 @@
 ul{
     list-style: none;
 }
-
+.active{
+    color: var(--brand-color);
+}
 .dark-theme{
     background-color: var(--background-dark);
     color: var(--font-primary);
