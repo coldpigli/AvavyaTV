@@ -2,33 +2,39 @@ const navdata = [
     {
         id: 1,
         title: "Home",
-        icon: "home"
+        icon: "home",
+        nextUrl: "/"   
     },
     {
         id: 2,
         title: "Explore",
-        icon: "explore"
+        icon: "explore",
+        nextUrl: "/explore"
     },
     {
         id: 3,
         title: "Playlists",
-        icon: "playlist_add"
+        icon: "playlist_add",
+        nextUrl: "/playlist"
     },
     {
         id: 4,
         title: "Liked",
-        icon: "thumb_up"
+        icon: "thumb_up",
+        nextUrl: "/liked"
     },
     {
         id: 5,
         title: "Watch Later",
-        icon: "watch_later"
+        icon: "watch_later",
+        nextUrl: "/watchlater"
     },
     {
         id: 6,
         title: "History",
-        icon: "history"
-    }
+        icon: "history",
+        nextUrl: "history"
+    },
 ];
 
 export default navdata;

@@ -27,8 +27,6 @@ ul{
     list-style: none;
 }
 
-.App {
-}
 .dark-theme{
     background-color: var(--background-dark);
     color: var(--font-primary);
