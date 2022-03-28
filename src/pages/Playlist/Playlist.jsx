@@ -2,7 +2,7 @@ import React from 'react'
 
 const Playlist = () => {
   return (
-    <div>Playlist</div>
+    <div className={`dark-theme generic-page`}>Playlist</div>
   )
 }
 

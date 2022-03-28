@@ -5,7 +5,9 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1.5rem;
+    position: fixed;
     transition: 200ms ease;
+    background-color: var(--background-dark);
 }
 
 .navItem{
@@ -24,7 +26,7 @@
 
 :global .active {
     color: var(--font-primary);
-    background-color: var(--color-pop-2);
+    background-color: var(--pastel-green);
     padding: var(--space-xs);
     border-radius: 0.5rem;
 }
@@ -54,5 +56,7 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 0 2rem;
+        border-right: 0;
+        border-top: 1px solid var(--font-gray);
     }
 }

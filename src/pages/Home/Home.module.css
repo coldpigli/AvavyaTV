@@ -1,0 +1,52 @@
+
+.heroContainer{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.heroImage{
+    width: 65%;
+    border-radius: var(--space-xs);
+}
+
+.heroImage img{
+    border-radius: var(--space-sm);
+}
+
+.heroInfo{
+    width: 35%;
+    border-radius: var(--space-sm);
+}
+
+
+.heroHeading{
+    font-size: 2.25rem;
+}
+
+.heroGenre{
+    
+}
+
+@media only screen and (max-width: 780px){
+    .homepage{
+        margin-bottom: 5rem;
+    }
+    .heroContainer{
+        flex-direction: column;
+    }
+    .heroImage{
+        width: 100%;
+    }
+    .heroImage img{
+        height: 30vh;
+        object-fit: cover;
+    }
+    .heroInfo{
+        width: 100%;
+    }
+    .heroHeading{
+        font-size: 2rem;
+    }
+}

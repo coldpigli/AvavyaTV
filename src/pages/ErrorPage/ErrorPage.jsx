@@ -2,7 +2,7 @@ import React from 'react'
 
 const ErrorPage = () => {
   return (
-    <div>ErrorPage</div>
+    <div className={`dark-theme generic-page`}>ErrorPage</div>
   )
 }
 

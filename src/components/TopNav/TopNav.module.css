@@ -1,0 +1,23 @@
+.topnav{
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-sm) var(--space-md);
+    justify-content: space-between;
+}
+
+.logoContainer{
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.logo{
+    background-color: var(--pastel-green);
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+}
+
+@media only screen and (max-width: 600px){
+    .topnav{
+        width: 100%;
+    }
+}

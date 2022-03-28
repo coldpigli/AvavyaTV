@@ -2,7 +2,7 @@ import React from 'react'
 
 const WatchLater = () => {
   return (
-    <div>WatchLater</div>
+    <div className={`dark-theme generic-page`}>WatchLater</div>
   )
 }
 
