@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const SideNav = () => {
 
   return (
-    <aside className={`${styles.sidenav} txt-label dark-theme`}>
+    <aside className={`${styles.sidenav} txt-label`}>
       {navdata.map(({ title, icon, nextUrl }) => {
         return (
           <NavLink to={nextUrl} className={`${styles.navItem}`}>

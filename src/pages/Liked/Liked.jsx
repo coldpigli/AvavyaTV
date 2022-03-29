@@ -2,7 +2,7 @@ import React from 'react'
 
 const Liked = () => {
   return (
-    <div>Liked</div>
+    <div className={`dark-theme generic-page`}>Liked</div>
   )
 }
 

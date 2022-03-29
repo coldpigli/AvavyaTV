@@ -2,7 +2,7 @@ import React from 'react'
 
 const Explore = () => {
   return (
-    <div>Explore</div>
+    <div className={`dark-theme generic-page`} >Explore</div>
   )
 }
 

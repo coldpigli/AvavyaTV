@@ -6,7 +6,7 @@
     --font-dark: #1b1b1b;
 
     /* backgorund colors  */
-    --background-dark: #1C2328;
+    --background-dark: #000000;
     --background-gray: #1F2128;
 
     /* pastels */
@@ -32,4 +32,54 @@ ul{
 .dark-theme{
     background-color: var(--background-dark);
     color: var(--font-primary);
+}
+
+.brand-color{
+    color: var(--pastel-green);
+}
+
+.heading1{
+    font-size: 2.25rem;
+}
+
+.heading2{
+    font-size: 1.526rem;
+}
+
+.heading3{
+    font-size: 1.25rem;
+}
+
+.paragraph1{
+    font-size: 1.125rem;
+}
+
+.paragraph2{
+    font-size: 0.875rem;
+}
+
+
+.generic-page{
+    margin-left: 5rem;
+    width: 100%;
+    min-height: 100vh;
+}
+
+html::-webkit-scrollbar {
+    width: 5px; 
+ }
+
+html::-webkit-scrollbar-track {
+  background-color: var(--background-dark);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--background-gray);
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 600px){
+    .generic-page{
+        margin-left: 0;
+    }
 }
