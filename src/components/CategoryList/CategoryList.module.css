@@ -1,0 +1,5 @@
+.categoryList{
+    justify-content: space-between;
+    padding-top: var(--space-lg);
+    gap: 2rem;
+}

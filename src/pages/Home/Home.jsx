@@ -1,5 +1,5 @@
 import React from "react";
-import { TopNav } from "../../components";
+import { CategoryCard, CategoryList, CategorySection, TopNav } from "../../components";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 
@@ -27,7 +27,9 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div></div>
+      <CategorySection title="Browse Genres" nextUrl = "explore">
+        <CategoryList/>
+      </CategorySection>
     </div>
   );
 };

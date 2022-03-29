@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./TopNav.module.css";
 
-import BrandLogo from "../../assets/AvavyaTVLOGO.png";
-
 const TopNav = () => {
   return (
     <div className={`${styles.topnav} flex`}>
