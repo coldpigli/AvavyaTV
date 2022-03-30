@@ -17,7 +17,7 @@ function App() {
       <SideNav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
+        <Route path="/explore/:category" element={<Explore />} />
         <Route path="/history" element={<History />} />
         <Route path="/liked" element={<Liked />} />
         <Route path="/playlist" element={<Playlist />} />

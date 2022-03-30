@@ -27,7 +27,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <CategorySection title="Browse Genres" nextUrl = "explore">
+      <CategorySection title="Browse Genres" nextUrl = "explore/all">
         <CategoryList/>
       </CategorySection>
     </div>
