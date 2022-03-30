@@ -8,8 +8,10 @@
     /* backgorund colors  */
     --background-dark: #000000;
     --background-gray: #1F2128;
+    --background-darkGrey: #16171b;
 
     /* pastels */
+    --brand-color: hsl(161, 63%, 30%);
     --pastel-blue: #688DE2;
     --pastel-indigo: #726CF2;
     --pastel-green: #5BB68B;

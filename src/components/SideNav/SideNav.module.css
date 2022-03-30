@@ -26,7 +26,7 @@
 
 :global .active {
     color: var(--font-primary);
-    background-color: var(--pastel-green);
+    background-color: var(--brand-color);
     padding: var(--space-xs);
     border-radius: 0.5rem;
 }

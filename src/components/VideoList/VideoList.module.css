@@ -1,0 +1,7 @@
+.videoList{
+    width: 90%;
+    margin: 0 auto 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
