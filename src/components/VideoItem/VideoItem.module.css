@@ -1,0 +1,37 @@
+.videoItem{
+    width: 16rem;
+    gap: 0.5rem;
+    border-radius: var(--radius-md);
+}
+
+.videoImage{
+    border-radius: var(--radius-md);
+}
+
+.videoImage img{
+    border-radius: var(--radius-sm);
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.ellipse{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cta{
+    cursor: pointer;
+}
+
+.dropdownItem{
+    display: flex;
+    justify-content: space-between;
+    width: 8rem;
+}
+
+@media only screen and (max-width: 780px)  {
+    .videoItem{
+        width: 100%;
+    }
+}

@@ -1,0 +1,43 @@
+.filterBar{
+    width: 90%;
+    margin: 1.875rem auto 1.875rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.filterChip{
+    display: flex;
+    color: var(--brand-color);
+    align-items: center;
+    transition: transform .1s;
+    width: fit-content;
+    border: 1px solid var(--brand-color);
+    font-weight: 400;
+    padding: 0.3rem 1.5rem;
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+}
+
+
+.filterChipActive{
+    color: var(--font-primary);
+    background-color: var(--brand-color);
+}
+
+@media (hover: hover){
+    .filterChip:hover{
+        transform: scale(1.1);
+    }
+}
+
+@media  only screen and  (max-width: 780px){
+    .filterBar{
+        overflow-x: scroll;
+        gap: 1rem;
+        margin: 1.875 auto 0;
+    }
+    .filterChip{
+        min-width: fit-content;
+    }
+}

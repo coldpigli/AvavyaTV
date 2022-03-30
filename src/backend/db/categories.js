@@ -8,6 +8,10 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
+    categoryName: "All"
+  },
+  {
+    _id: uuid(),
     categoryName: "Indie",
     imageUrl: "https://ik.imagekit.io/avavya/VideoLib/Category-indie2_sIX1POKgm.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648546097472"
   },
