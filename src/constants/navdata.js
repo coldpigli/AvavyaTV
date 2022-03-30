@@ -9,7 +9,7 @@ const navdata = [
         id: 2,
         title: "Explore",
         icon: "explore",
-        nextUrl: "/explore/all"
+        nextUrl: "/explore/All"
     },
     {
         id: 3,

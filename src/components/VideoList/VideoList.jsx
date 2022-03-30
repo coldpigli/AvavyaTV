@@ -10,7 +10,7 @@ const VideoList = () => {
   const { videoList } = videoState;
   const { filterValue, setFilterValue } = useFilter();
   const {category} = useParams();
-
+  
   const getFilteredVideos = () => {
     if (filterValue === "All") {
       return videoList;

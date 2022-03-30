@@ -22,12 +22,12 @@ const Home = () => {
             subsidiaries, a process that may include an autonomous,
             do-it-yourself approach to recording and publishing.
           </p>
-          <Link to="/explore" className="btn btn-primary">
+          <Link to="/explore/All" className="btn btn-primary">
             Explore
           </Link>
         </div>
       </div>
-      <CategorySection title="Browse Genres" nextUrl = "explore/all">
+      <CategorySection title="Browse Genres" nextUrl = "explore/All">
         <CategoryList/>
       </CategorySection>
     </div>
