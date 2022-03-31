@@ -1,5 +1,10 @@
 import React from "react";
-import { CategoryCard, CategoryList, CategorySection, TopNav } from "../../components";
+import {
+  CategoryCard,
+  CategoryList,
+  CategorySection,
+  TopNav,
+} from "../../components";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 
@@ -12,7 +17,9 @@ const Home = () => {
           <img src="https://ik.imagekit.io/avavya/VideoLib/sabysingh_KM09Ln7j9.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648500041757"></img>
         </div>
         <div className={`${styles.heroInfo}`}>
-          <h1 className={`${styles.heroHeading} gap-d20`}>Welcome to <span className="brand-color">AvavyaTV</span></h1>
+          <h1 className={`${styles.heroHeading} gap-d20`}>
+            Welcome to <span className="brand-color">AvavyaTV</span>
+          </h1>
           <h3 className="gap-d30">
             A place to watch your favourite Indie Artists.
           </h3>
@@ -27,8 +34,8 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <CategorySection title="Browse Genres" nextUrl = "explore/All">
-        <CategoryList/>
+      <CategorySection title="Browse Genres" nextUrl="explore/All">
+        <CategoryList />
       </CategorySection>
     </div>
   );

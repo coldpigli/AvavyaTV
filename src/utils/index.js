@@ -1,5 +1,7 @@
 import useAxios from "./useAxios";
+import validateInputs from "./validateInputs";
 
 export{
-    useAxios
+    useAxios,
+    validateInputs
 }

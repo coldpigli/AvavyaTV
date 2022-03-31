@@ -1,5 +1,7 @@
 .ldsRipple {
-    position: relative;
+    position: fixed;
+    top: 50%;
+    right: 50%;
     width: 80px;
     height: 80px;
   }
