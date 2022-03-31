@@ -7,6 +7,7 @@ import FilterPills from "./FilterPills/FilterPills";
 import VideoList from "./VideoList/VideoList";
 import VideoItem from "./VideoItem/VideoItem";
 import Dropdown from "./Dropdown/Dropdown";
+import Loader from "./Loader/Loader";
 
 export {
     SideNav,
@@ -17,5 +18,6 @@ export {
     FilterPills,
     VideoList,
     VideoItem,
-    Dropdown
+    Dropdown,
+    Loader
 }

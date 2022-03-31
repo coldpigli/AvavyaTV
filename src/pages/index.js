@@ -5,6 +5,7 @@ import Liked from "./Liked/Liked";
 import Playlist from "./Playlist/Playlist";
 import WatchLater from "./WatchLater/WatchLater";
 import ErrorPage from "./ErrorPage/ErrorPage";
+import PlayVideo from "./PlayVideo/PlayVideo";
 
 export{
     Home,
@@ -13,5 +14,6 @@ export{
     Liked,
     Playlist,
     WatchLater,
-    ErrorPage
+    ErrorPage,
+    PlayVideo
 }

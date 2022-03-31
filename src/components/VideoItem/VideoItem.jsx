@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Dropdown from "../Dropdown/Dropdown";
 import styles from "./VideoItem.module.css";
 
@@ -7,9 +8,9 @@ const VideoItem = ({ videoData }) => {
 
   return (
     <div className={`${styles.videoItem} flex-vertical`}>
-      <div className={`${styles.videoImage}`}>
+      <Link to={`/video/${videoId}`} className={`${styles.videoImage}`}>
         <img src={thumbnail} alt="video-thumb" />
-      </div>
+      </Link>
       <div>
         <p className={`${styles.ellipse}`}>{title}</p>
         <div className="children-centered">

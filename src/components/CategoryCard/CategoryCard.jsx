@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CategoryCard.module.css'
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const CategoryCard = ({category}) => {
 
