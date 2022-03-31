@@ -6,7 +6,7 @@ const FilterPills = () => {
   const {filterValue, setFilterValue} = useFilter();
 
   const filterProducts = (category) => {
-    setFilterValue(category.categoryName);
+    setFilterValue(category.categoryName)
   }
   
   return (

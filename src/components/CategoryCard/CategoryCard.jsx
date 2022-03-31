@@ -7,7 +7,7 @@ const CategoryCard = ({category}) => {
     const {categoryName, imageUrl} = category;
 
   return (
-    <Link to="/explore">
+    <Link to={`explore/${categoryName}`}>
         <div className={`${styles.categoryCard} flex-vertical`}>
         <div className={`${styles.categoryImage}`}>
             <img className={`avatar avatar-square avatar-lg`} src={imageUrl} />

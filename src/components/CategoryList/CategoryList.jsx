@@ -1,5 +1,6 @@
 import React from 'react'
 import { useCategories } from '../../contexts';
+
 import CategoryCard from '../CategoryCard/CategoryCard';
 import styles from "./CategoryList.module.css";
 
