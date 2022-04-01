@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserDetails } from "../../contexts/UserContext/UserContext";
-import {  validateInputs } from "../../utils";
+import {  toast, validateInputs } from "../../utils";
 import styles from "./LoginPage.module.css";
 
 const LoginPage = () => {
@@ -34,16 +34,21 @@ const LoginPage = () => {
                 const {foundUser,encodedToken} = response.data;
                 localStorage.setItem("authToken",encodedToken)
                 dispatchUser({type: "USER_LOGIN", payload: foundUser})
+                toast({type: "success", message: "Login Successful"})
                 navigate("/explore/All")
               }else{
-                setIsError('Login Failed')
+                toast({type: "error", message: "Login Failed"})
+                setIsError('Login Failed');
+                
               }
             }catch(err){
+              toast({type: "error", message: "Login Failed"})
               setIsError('Login Failed')
             }  
         }
         else{
             setIsError("Please enter correct credentials")
+            toast({type: "error", message: "Please enter correct credentials"})
         }
   }
 

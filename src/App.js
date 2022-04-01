@@ -1,6 +1,7 @@
 import "./App.css";
 import { SideNav } from "./components";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import {
   ErrorPage,
   Explore,
@@ -32,6 +33,7 @@ function App() {
         <Route path="/mockman" element={<MockMan/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <ToastContainer /> 
     </div>
   );
 }
