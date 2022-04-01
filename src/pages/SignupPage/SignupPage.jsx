@@ -59,7 +59,7 @@ const SignupPage = () => {
         <form className={`${styles.signupForm} flex-vertical`}>
           <div className={`${styles.nameContainer} flex`}>
             <div className={`input-wrapper gap-d20 ${styles.inputField}`}>
-              <label className="input-name txt-bold" for="input">
+              <label className="input-name txt-bold" htmlFor="input">
                 First Name
               </label>
               <input
@@ -74,7 +74,7 @@ const SignupPage = () => {
               />
             </div>
             <div className={`input-wrapper gap-d20 ${styles.inputField}`}>
-              <label className="input-name txt-bold" for="input">
+              <label className="input-name txt-bold" htmlFor="input">
                 Last Name
               </label>
               <input
@@ -90,7 +90,7 @@ const SignupPage = () => {
             </div>
           </div>
           <div className={`input-wrapper gap-d20 ${styles.inputField}`}>
-            <label className="input-name txt-bold" for="input">
+            <label className="input-name txt-bold" htmlFor="input">
               Email
             </label>
             <input
@@ -105,7 +105,7 @@ const SignupPage = () => {
             />
           </div>
           <div className={`input-wrapper gap-d20 ${styles.inputField}`}>
-            <label className="input-name txt-bold" for="password">
+            <label className="input-name txt-bold" htmlFor="password">
               Password
             </label>
             <input
@@ -119,7 +119,7 @@ const SignupPage = () => {
             />
           </div>
           <div className={`input-wrapper gap-d20 ${styles.inputField}`}>
-            <label className="input-name txt-bold" for="password">
+            <label className="input-name txt-bold" htmlFor="password">
               Confirm Password
             </label>
             <input

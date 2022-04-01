@@ -56,12 +56,12 @@ const LoginPage = () => {
       <section className={`${styles.loginContainer} flex-vertical`}>
         <h1 className={`heading1 brand-color gap-d30`}>Login</h1>
         <form className={`${styles.loginForm} flex-vertical`} >
-          <div class="input-wrapper gap-d20">
-            <label class="input-name txt-bold" for="input">
+          <div className="input-wrapper gap-d20">
+            <label className="input-name txt-bold" htmlFor="input">
               Email
             </label>
             <input
-              class="input-box"
+              className="input-box"
               type="email"
               placeholder="Enter your email"
               value={loginData.email}
@@ -70,12 +70,12 @@ const LoginPage = () => {
               onChange={(e)=>setLoginData({...loginData, email: e.target.value})}
             />
           </div>
-          <div class={`input-wrapper gap-d20 ${styles.inputWrapper}`}>
-            <label class="input-name txt-bold" for="password">
+          <div className={`input-wrapper gap-d20 ${styles.inputWrapper}`}>
+            <label className="input-name txt-bold" htnlFor="password">
               Password
             </label>
             <input
-              class="input-box"
+              className="input-box"
               type="password"
               value={loginData.password}
               placeholder="Enter Password"
@@ -93,7 +93,7 @@ const LoginPage = () => {
           </button>
         </form>
           <Link to="/signup" className={`${styles.signupBtn} btn btn-primary-outline`}>
-            <span class="material-icons md-24 gap-r10">account_circle</span>
+            <span className="material-icons md-24 gap-r10">account_circle</span>
               New User? Sign-Up
           </Link>
       </section>
