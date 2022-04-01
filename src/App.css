@@ -66,6 +66,14 @@ ul{
     font-size: 0.875rem;
 }
 
+.dark-font{
+    color: var(--background-dark);
+}
+
+.day-font{
+    color: var(--font-primary);
+}
+
 
 .generic-page{
     margin-left: 5rem;

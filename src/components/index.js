@@ -9,6 +9,8 @@ import VideoItem from "./VideoItem/VideoItem";
 import Dropdown from "./Dropdown/Dropdown";
 import Loader from "./Loader/Loader";
 import VideoInfo from "./VideoInfo/VideoInfo";
+import RedirectToLogin from "./RedirectToLogin/RedirectToLogin";
+import HorizontalVideoCard from "./HorizontalVideoCard/HorizontalVideoCard";
 
 export {
     SideNav,
@@ -22,4 +24,6 @@ export {
     Dropdown,
     Loader,
     VideoInfo,
+    RedirectToLogin,
+    HorizontalVideoCard
 }
