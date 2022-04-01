@@ -16,6 +16,10 @@
     cursor: pointer;
 }
 
+.signupBtn{
+    width: 18rem;
+}
+
 @media only screen and (max-width: 600px){
     .loginContainer{
         width: 100%;

@@ -11,6 +11,7 @@ import {
   MockMan,
   Playlist,
   PlayVideo,
+  SignupPage,
   WatchLater,
 } from "./pages";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage/>}/>
         <Route path="/mockman" element={<MockMan/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>

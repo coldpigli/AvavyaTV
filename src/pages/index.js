@@ -8,6 +8,7 @@ import ErrorPage from "./ErrorPage/ErrorPage";
 import PlayVideo from "./PlayVideo/PlayVideo";
 import LoginPage from "./LoginPage/LoginPage";
 import MockMan from "./MockMan/MockMan";
+import SignupPage from "./SignupPage/SignupPage";
 
 export{
     Home,
@@ -19,5 +20,6 @@ export{
     ErrorPage,
     PlayVideo,
     LoginPage,
-    MockMan
+    MockMan,
+    SignupPage
 }

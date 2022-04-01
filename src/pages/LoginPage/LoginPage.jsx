@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserDetails } from "../../contexts/UserContext/UserContext";
 import {  validateInputs } from "../../utils";
 import styles from "./LoginPage.module.css";
@@ -92,6 +92,10 @@ const LoginPage = () => {
             Sign - In
           </button>
         </form>
+          <Link to="/signup" className={`${styles.signupBtn} btn btn-primary-outline`}>
+            <span class="material-icons md-24 gap-r10">account_circle</span>
+              New User? Sign-Up
+          </Link>
       </section>
     </div>
   );

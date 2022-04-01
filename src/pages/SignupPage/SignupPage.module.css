@@ -1,0 +1,32 @@
+.signUpPage{
+    padding: 2rem;
+}
+
+.signupContainer{
+    width: 35%;
+    margin: 0 auto;
+}
+
+.nameContainer{
+    gap: 0.5rem;
+}
+
+.nameContainer input{
+    width: 100%;
+}
+
+.inputField{
+    width: 100%;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .signupContainer{
+        width: 100%;
+    }
+    .nameContainer{
+        flex-wrap: wrap;
+        gap: 0rem;
+    }
+}
