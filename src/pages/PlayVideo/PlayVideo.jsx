@@ -20,7 +20,10 @@ const PlayVideo = () => {
       };
     const { videoState } = useVideos();
     const { videoList } = videoState;
-    const videoMetaData = videoList.find((item)=>item.videoId==videoId);
+
+    const getVideoMetaData = (videoList) => {
+        return videoList.find((item)=>item.videoId===videoId);
+    }
 
   return (
     <div className={`${styles.playVideo} dark-theme generic-page`}>
@@ -41,7 +44,9 @@ const PlayVideo = () => {
             </div>
         </div>
         <div className={`${styles.videoInfo}`}>
-            <VideoInfo videoMetaData={videoMetaData}/>
+            {
+                loading ? null: <VideoInfo videoMetaData={getVideoMetaData(videoList)}/>
+            }
         </div>
     </div>
   )
