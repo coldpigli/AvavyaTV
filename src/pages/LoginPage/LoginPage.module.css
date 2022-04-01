@@ -1,0 +1,27 @@
+.loginPage{
+    padding: 2rem;
+}
+
+.loginContainer{
+    width: 30%;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.inputWrapper{
+    width: 100%;
+}
+
+.guestLogin{
+    cursor: pointer;
+}
+
+.signupBtn{
+    width: 18rem;
+}
+
+@media only screen and (max-width: 600px){
+    .loginContainer{
+        width: 100%;
+    }
+}

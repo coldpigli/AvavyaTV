@@ -7,6 +7,7 @@ const Loader = () => {
         <div>
             </div><div>
         </div>
+        Loading
     </div>
   )
 }

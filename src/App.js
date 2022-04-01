@@ -7,8 +7,11 @@ import {
   History,
   Home,
   Liked,
+  LoginPage,
+  MockMan,
   Playlist,
   PlayVideo,
+  SignupPage,
   WatchLater,
 } from "./pages";
 
@@ -19,11 +22,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore/:category" element={<Explore />} />
-        <Route path="/video/:videoId" element={<PlayVideo/>}/>
+        <Route path="/video/:videoId" element={<PlayVideo />} />
         <Route path="/history" element={<History />} />
         <Route path="/liked" element={<Liked />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/watchlater" element={<WatchLater />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage/>}/>
+        <Route path="/mockman" element={<MockMan/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

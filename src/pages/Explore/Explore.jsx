@@ -5,7 +5,6 @@ import { FilterPills, TopNav, VideoList } from '../../components';
 const Explore = () => {
 
   const {category} = useParams();
-  console.log(category);
 
   return (
     <div className={`dark-theme generic-page`} >
