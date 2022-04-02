@@ -1,61 +1,26 @@
 import styles from "./VideoInfo.module.css";
 import { useState } from "react";
 import { useUserDetails } from "../../contexts";
-import { checkLogin, toast } from "../../utils";
-import axios from "axios";
+import { checkLogin } from "../../utils";
+import { handleLikeVideo, handleUnlikeVideo } from "../../utils/handleLikeUnlike";
 
 const VideoInfo = ({ videoMetaData }) => {
   const [toggleDesc, setToggleDesc] = useState(false);
   const { category, creator, description, title } = videoMetaData;
   const { userState, dispatchUser } = useUserDetails();
   const { isLoggedIn, likes } = userState;
+  
 
   const findIfLiked = (video) => {
       return likes.find((item)=>video._id===item._id)
   }
 
-  const addToLike = async () => {
-    if (checkLogin(isLoggedIn)) {
-      try {
-        const res = await axios.post(
-          "/api/user/likes",
-          { video: videoMetaData },
-          {
-            headers: {
-              authorization: localStorage.getItem("authToken"),
-            },
-          }
-        );
-        if (res.status === 200 || res.status === 201) {
-          const { likes } = res.data;
-          dispatchUser({ type: "ADD_TO_LIKED", payload: likes });
-          toast({ type: "success", message: "Added to Liked Videos" });
-        }
-      } catch (err) {
-        console.log("Something bad happened", err);
-        toast({ type: "error", message: "Couldn't complete request" });
-      }
-    }
+  const addToLike = () => {
+    handleLikeVideo(videoMetaData, "authToken", isLoggedIn, dispatchUser)
   };
 
-  const removeFromLike = async () => {
-    if(checkLogin(isLoggedIn)){
-        try{
-            const res = await axios.delete(`/api/user/likes/${videoMetaData._id}`,{
-                headers: {
-                  authorization: localStorage.getItem("authToken")
-                },
-            });
-            if (res.status === 200 || res.status === 201) {
-                const { likes } = res.data;
-                dispatchUser({ type: "REMOVE_FROM_LIKED", payload: likes });
-                toast({ type: "success", message: "Removed from Liked Videos" });
-              }
-        }catch(err){
-            console.log("oops something bad happed", err);
-            toast({type: "error", message: "Couldn't complete request"})
-        }
-    }
+  const removeFromLike = () => {
+    handleUnlikeVideo(videoMetaData, "authToken", isLoggedIn, dispatchUser)
   }
 
   const handleWatchLater = () => {

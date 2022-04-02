@@ -15,7 +15,7 @@ const VideoList = () => {
     if (filterValue === "All") {
       return videoList;
     } else {
-      return videoList.filter((item) => item.category === filterValue);
+      return videoList?.filter((item) => item.category === filterValue);
     }
   };
 

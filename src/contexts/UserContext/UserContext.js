@@ -11,7 +11,7 @@ const UserProvider = ({ children }) => {
     firstName: "",
     history: [],
     likes: [],
-    playlists: [],
+    playlists: [], 
   });
 
   return (
