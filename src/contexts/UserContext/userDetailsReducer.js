@@ -10,7 +10,6 @@ const userDetailsReducer = (state, action) => {
         likes: likes,
         playlists: playlists,
       };
-
     case "USER_LOGOUT":
       localStorage.removeItem("authToken");
       return {
@@ -19,6 +18,14 @@ const userDetailsReducer = (state, action) => {
         history: [],
         likes: [],
         playlists: []
+      }  
+    case "ADD_TO_LIKED":
+      return {
+        ...state, likes: action.payload
+      }  
+    case "REMOVE_FROM_LIKED":
+      return {
+        ...state, likes: action.payload
       }  
     default:
      return state;

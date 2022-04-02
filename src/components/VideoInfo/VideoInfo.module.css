@@ -1,0 +1,33 @@
+.description{
+    cursor: pointer;
+}
+
+.callToAction{
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 0.5rem;
+    color: gray;
+    margin-bottom: 1rem;
+}
+
+.artist{
+    background-color: var(--brand-color);
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+}
+
+.ctaButtons{
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ctaButtons span{
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 600px){
+
+}

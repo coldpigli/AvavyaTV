@@ -35,6 +35,12 @@ ul{
     background-color: var(--background-dark);
     color: var(--font-primary);
 }
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
 
 .brand-color{
     color: var(--pastel-green);
@@ -58,6 +64,14 @@ ul{
 
 .paragraph2{
     font-size: 0.875rem;
+}
+
+.dark-font{
+    color: var(--background-dark);
+}
+
+.day-font{
+    color: var(--font-primary);
 }
 
 
