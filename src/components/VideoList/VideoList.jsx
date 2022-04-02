@@ -6,7 +6,7 @@ import styles from "./VideoList.module.css";
 
 const VideoList = () => {
 
-  const { videoState, isLoading } = useVideos();
+  const { videoState} = useVideos();
   const { videoList } = videoState;
   const { filterValue, setFilterValue } = useFilter();
   const {category} = useParams();

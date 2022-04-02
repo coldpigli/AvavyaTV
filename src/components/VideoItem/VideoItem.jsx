@@ -1,30 +1,23 @@
 import { Link } from "react-router-dom";
 import { useUserDetails } from "../../contexts";
 import { handleLikeVideo, handleUnlikeVideo } from "../../utils/handleLikeUnlike";
+import { addToWatchlater, removeFromWatchlater } from "../../utils/handleWatchLater";
 import Dropdown from "../Dropdown/Dropdown";
 import styles from "./VideoItem.module.css";
 
 const VideoItem = ({ videoData }) => {
   const { category, title, videoId, creator, thumbnail } = videoData;
   const { userState, dispatchUser } = useUserDetails();
-  const { isLoggedIn, likes } = userState;
+  const { isLoggedIn, likes, watchlater } = userState;
   console.log("From Lisiting page", userState);
 
   const findIfLiked = (video) => {
     return likes?.find((item) => video._id === item._id);
   };
 
-  const handleWatchLater = () => {
-    //handle watch later
-  };
-
-  const likeClickHandler = () => {
-     handleLikeVideo(videoData, "authToken", isLoggedIn, dispatchUser)
-  };
-
-  const unlikeClickHandler = () => {
-    handleUnlikeVideo(videoData, "authToken", isLoggedIn, dispatchUser)
-  };
+  const findIfWatchlater = (video) => {
+    return watchlater?.find((item)=>video._id === item._id);
+  }
 
   return (
     <div className={`${styles.videoItem} flex-vertical`}>
@@ -43,17 +36,21 @@ const VideoItem = ({ videoData }) => {
           >
             <div
               className={`${styles.dropdownItem}`}
-              onClick={handleWatchLater}
+              onClick={()=>{
+                findIfWatchlater(videoData)
+                  ? removeFromWatchlater(videoData, "authToken", isLoggedIn, dispatchUser)
+                  : addToWatchlater(videoData, "authToken", isLoggedIn, dispatchUser)
+              }}
             >
               <span className="material-icons md-24">watch_later</span>
-              <div>Watch Later</div>
+              <div>{findIfWatchlater(videoData) ? "Remove from Watch Later" : "Watch Later"}</div>
             </div>
             <div
               className={`${styles.dropdownItem}`}
               onClick={() => {
                 findIfLiked(videoData)
-                  ? unlikeClickHandler()
-                  : likeClickHandler();
+                  ?  handleUnlikeVideo(videoData, "authToken", isLoggedIn, dispatchUser)
+                  : handleLikeVideo(videoData, "authToken", isLoggedIn, dispatchUser);
               }}
             >
               <span className="material-icons md-24">thumb_up</span>
