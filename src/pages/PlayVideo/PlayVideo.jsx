@@ -4,7 +4,8 @@ import { Loader, TopNav } from '../../components';
 import styles from "./PlayVideo.module.css";
 import { useState } from 'react';
 import { VideoInfo } from '../../components';
-import { useVideos } from '../../contexts';
+import { useUserDetails, useVideos } from '../../contexts';
+import { addToHistory } from '../../utils/handleHistory';
 
 const PlayVideo = () => {
 
@@ -19,10 +20,17 @@ const PlayVideo = () => {
         },
       };
     const { videoState } = useVideos();
+    const {userState, dispatchUser} = useUserDetails();
+    const {isLoggedIn} = userState;
     const { videoList } = videoState;
 
     const getVideoMetaData = (videoList) => {
         return videoList.find((item)=>item.videoId===videoId);
+    }
+
+    const handleOnReady = () => {
+        setLoading(false);
+        addToHistory(getVideoMetaData(videoList),"authToken",isLoggedIn,dispatchUser);
     }
 
   return (
@@ -31,7 +39,7 @@ const PlayVideo = () => {
         <div className={`${styles.majorContainer} flex wrap`}>
             <div className={`${styles.videoFrame}`}>
                 {loading?<Loader/>:null}
-                <YouTube videoId={videoId} opts={opts} onReady={()=>setLoading(false)}/>
+                <YouTube videoId={videoId} opts={opts} onReady={handleOnReady}/>
                 
             </div>   
             <div className={`${styles.noteSection} flex-vertical`}>
