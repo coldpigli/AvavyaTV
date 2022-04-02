@@ -44,6 +44,26 @@ const addToHistory = async (videoData, tokenName, isLoggedIn, dispatchUser) => {
     }
 };
 
-export {addToHistory, removeFromHistory};
+const clearHistory = async (tokenName, isLoggedIn, dispatchUser) => {
+    if (checkLogin(isLoggedIn)) {
+      try {
+        const res = await axios.delete(`/api/user/history/all`, {
+          headers: {
+            authorization: localStorage.getItem(tokenName),
+          },
+        });
+        if (res.status === 200 || res.status === 201) {
+          const { history } = res.data;
+          toast({ type: "success", message: "Cleared your History" });
+          dispatchUser({type: "CLEAR_HISTORY", payload: history})   
+        }
+      } catch (err) {
+        console.log("oops something bad happed", err);
+        toast({ type: "error", message: "Couldn't complete request" });
+      }
+    }
+};
+
+export {addToHistory, removeFromHistory, clearHistory};
 
   

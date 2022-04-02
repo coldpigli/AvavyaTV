@@ -7,6 +7,12 @@
     gap: 3rem;
 }
 
+.historyClean{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .historyLeft{
     width: 30%;
     gap: 1rem;
