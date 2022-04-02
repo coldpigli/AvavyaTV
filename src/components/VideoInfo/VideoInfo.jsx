@@ -1,80 +1,35 @@
 import styles from "./VideoInfo.module.css";
 import { useState } from "react";
 import { useUserDetails } from "../../contexts";
-import { checkLogin, toast } from "../../utils";
-import axios from "axios";
+import { checkLogin } from "../../utils";
+import { handleLikeVideo, handleUnlikeVideo } from "../../utils/handleLikeUnlike";
+import { addToWatchlater, removeFromWatchlater } from "../../utils/handleWatchLater";
 
 const VideoInfo = ({ videoMetaData }) => {
   const [toggleDesc, setToggleDesc] = useState(false);
   const { category, creator, description, title } = videoMetaData;
   const { userState, dispatchUser } = useUserDetails();
-  const { isLoggedIn, likes } = userState;
+  const { isLoggedIn, likes, watchlater } = userState;
+  
 
   const findIfLiked = (video) => {
       return likes.find((item)=>video._id===item._id)
   }
 
-  const addToLike = async () => {
-    if (checkLogin(isLoggedIn)) {
-      try {
-        const res = await axios.post(
-          "/api/user/likes",
-          { video: videoMetaData },
-          {
-            headers: {
-              authorization: localStorage.getItem("authToken"),
-            },
-          }
-        );
-        if (res.status === 200 || res.status === 201) {
-          const { likes } = res.data;
-          dispatchUser({ type: "ADD_TO_LIKED", payload: likes });
-          toast({ type: "success", message: "Added to Liked Videos" });
-        }
-      } catch (err) {
-        console.log("Something bad happened", err);
-        toast({ type: "error", message: "Couldn't complete request" });
-      }
-    }
-  };
-
-  const removeFromLike = async () => {
-    if(checkLogin(isLoggedIn)){
-        try{
-            const res = await axios.delete(`/api/user/likes/${videoMetaData._id}`,{
-                headers: {
-                  authorization: localStorage.getItem("authToken")
-                },
-            });
-            if (res.status === 200 || res.status === 201) {
-                const { likes } = res.data;
-                dispatchUser({ type: "REMOVE_FROM_LIKED", payload: likes });
-                toast({ type: "success", message: "Removed from Liked Videos" });
-              }
-        }catch(err){
-            console.log("oops something bad happed", err);
-            toast({type: "error", message: "Couldn't complete request"})
-        }
-    }
+  const findIfWatchlater = (video) => {
+    return watchlater.find((item)=>video._id===item._id)
   }
 
-  const handleWatchLater = () => {
-    if (checkLogin(isLoggedIn)) {
-      //handle like
-    }
-  };
-
-  const handleAddToPlaylist = () => {
-    if (checkLogin(isLoggedIn)) {
-      //handle like
-    }
-  };
 
   const handleShare = () => {
     if (checkLogin(isLoggedIn)) {
       //handle like
     }
   };
+
+  const handleAddToPlaylist = () => {
+    //will update this
+  }
 
   return (
     <div className={`flex-vertical`}>
@@ -85,15 +40,25 @@ const VideoInfo = ({ videoMetaData }) => {
           <div
             className={`${styles.ctaButtons} flex-vertical ${findIfLiked(videoMetaData)?"brand-color":""}`}
             onClick={()=>{
-                findIfLiked(videoMetaData)?removeFromLike():addToLike()
+                findIfLiked(videoMetaData)
+                ?
+                handleUnlikeVideo(videoMetaData, "authToken", isLoggedIn, dispatchUser)
+                :
+                handleLikeVideo(videoMetaData, "authToken", isLoggedIn, dispatchUser)
             }}
           >
             <span className="material-icons md-24">thumb_up</span>
             <p className={`txt-label`}>LIKE</p>
           </div>
           <div
-            className={`${styles.ctaButtons} flex-vertical`}
-            onClick={handleWatchLater}
+            className={`${styles.ctaButtons} flex-vertical ${findIfWatchlater(videoMetaData)?"brand-color":""}`}
+            onClick={()=>{
+              findIfWatchlater(videoMetaData)
+              ?
+              removeFromWatchlater(videoMetaData, "authToken", isLoggedIn, dispatchUser)
+              :
+              addToWatchlater(videoMetaData, "authToken", isLoggedIn, dispatchUser)
+            }}
           >
             <span className="material-icons md-24">watch_later</span>
             <p className={`txt-label`}>WATCH LATER</p>

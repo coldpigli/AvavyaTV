@@ -1,13 +1,14 @@
 const userDetailsReducer = (state, action) => {
   switch (action.type) {
     case "USER_LOGIN":
-      const { firstName, history, likes, playlists } = action.payload;
+      const { firstName, history, likes, playlists, watchlater } = action.payload;
       return {
         ...state,
         isLoggedIn: true,
         firstName: firstName,
         history: history,
         likes: likes,
+        watchlater: watchlater,
         playlists: playlists,
       };
     case "USER_LOGOUT":
@@ -17,6 +18,7 @@ const userDetailsReducer = (state, action) => {
         firstName: "",
         history: [],
         likes: [],
+        watchlater: [],
         playlists: []
       }  
     case "ADD_TO_LIKED":
@@ -27,6 +29,14 @@ const userDetailsReducer = (state, action) => {
       return {
         ...state, likes: action.payload
       }  
+    case "ADD_TO_WATCHLATER":
+      return {
+        ...state, watchlater: action.payload
+      }
+    case "REMOVE_FROM_WATCHLATER":
+      return {
+        ...state, watchlater: action.payload
+      }
     default:
      return state;
   }

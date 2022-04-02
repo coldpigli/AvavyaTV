@@ -6,7 +6,7 @@ import styles from "./VideoList.module.css";
 
 const VideoList = () => {
 
-  const { videoState, isLoading } = useVideos();
+  const { videoState} = useVideos();
   const { videoList } = videoState;
   const { filterValue, setFilterValue } = useFilter();
   const {category} = useParams();
@@ -15,7 +15,7 @@ const VideoList = () => {
     if (filterValue === "All") {
       return videoList;
     } else {
-      return videoList.filter((item) => item.category === filterValue);
+      return videoList?.filter((item) => item.category === filterValue);
     }
   };
 

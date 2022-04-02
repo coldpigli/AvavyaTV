@@ -1,11 +1,12 @@
 import { HorizontalVideoCard, RedirectToLogin, TopNav } from "../../components";
 import { useUserDetails } from "../../contexts";
 import { checkLogin } from "../../utils";
+import { handleUnlikeVideo } from "../../utils/handleLikeUnlike";
 import styles from "./Liked.module.css";
 
 const Liked = () => {
 
-  const { userState, dispatchUser } = useUserDetails();
+  const { userState} = useUserDetails();
   const { isLoggedIn, likes, firstName } = userState;
 
   return (
@@ -22,7 +23,7 @@ const Liked = () => {
               </div>
               <div className={`${styles.likedRight} flex-vertical`}>
                 {
-                  likes.map((item)=><HorizontalVideoCard video={item}/>)
+                  likes.map((item)=><HorizontalVideoCard video={item} handleClickAction={handleUnlikeVideo}/>)
                 }
               </div>
           </section>
