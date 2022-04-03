@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { RedirectToLogin, TopNav } from "../../components";
 import { useUserDetails } from "../../contexts";
 import { checkLogin } from "../../utils";
@@ -60,9 +61,9 @@ const Playlist = () => {
             <div className={`${styles.playlistDisplay}`}>
               {playlists.map((playlist) => {
                 return (
-                  <div className={`${styles.playlistItem}`}>
+                  <Link to={`/playlist/${playlist._id}`} className={`${styles.playlistItem}`}>
                     {playlist.title}
-                  </div>
+                  </Link>
                 );
               })}
             </div>

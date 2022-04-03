@@ -16,7 +16,7 @@ const addAPlaylist = async (playlistData, tokenName, isLoggedIn, dispatchUser) =
         );
         if (res.status === 200 || res.status === 201) {
           const { playlists } = res.data;
-          dispatchUser({type: "ADD_TO_PLAYLIST", payload: playlists})
+          dispatchUser({type: "UPDATE_PLAYLIST", payload: playlists})
           toast({type:"success", message: "Playlist Created"})
         }
       } catch (err) {
@@ -50,4 +50,51 @@ const addAPlaylist = async (playlistData, tokenName, isLoggedIn, dispatchUser) =
     }
   };
 
-  export {addAPlaylist, addVideoToPlaylist};
+  const deleteAPlaylist = async (playlistId, tokenName, isLoggedIn, dispatchUser) => {
+    if (checkLogin(isLoggedIn)) {
+      try {
+        const res = await axios.delete(
+          `/api/user/playlists/${playlistId}`,
+          {
+            headers: {
+              authorization: localStorage.getItem(tokenName),
+            },
+          }
+        );
+        if (res.status === 200 || res.status === 201) {
+          const { playlists } = res.data;
+          dispatchUser({type: "UPDATE_PLAYLIST", payload: playlists})
+          toast({type:"success", message: "Successfully deleted"})
+        }
+      } catch (err) {
+        console.log("Something bad happened", err);
+        toast({type:"error", message: "Couldn't complete the reuqest"})
+      }
+    }
+  };
+
+  const deleteVideoFromPlaylist = async (playlistId, videoId, tokenName, isLoggedIn, dispatchUser) => {
+    if (checkLogin(isLoggedIn)) {
+      try {
+        const res = await axios.delete(
+          `/api/user/playlists/${playlistId}/${videoId}`,
+          {
+            headers: {
+              authorization: localStorage.getItem(tokenName),
+            },
+          }
+        );
+        if (res.status === 200 || res.status === 201) {
+          const { playlist } = res.data;
+          dispatchUser({type: "DELETE_VIDEO_FROM_PLAYLIST", payload: playlist})
+          toast({type:"success", message: "Successfully deleted"})
+        }
+      } catch (err) {
+        console.log("Something bad happened", err);
+        toast({type:"error", message: "Couldn't complete the reuqest"})
+      }
+    }
+  };
+
+  
+  export {addAPlaylist, addVideoToPlaylist, deleteAPlaylist, deleteVideoFromPlaylist};

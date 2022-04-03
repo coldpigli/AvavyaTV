@@ -49,7 +49,7 @@ const userDetailsReducer = (state, action) => {
       return {
         ...state, history: action.payload
       }
-    case "ADD_TO_PLAYLIST":
+    case "UPDATE_PLAYLIST":
       return {
         ...state, playlists: action.payload
       }
@@ -58,6 +58,12 @@ const userDetailsReducer = (state, action) => {
       const whichPlaylist = state.playlists.find((item)=>item._id===playlist._id);
       const temp = state.playlists.map((item)=>(item._id===whichPlaylist._id)?playlist:item);
       return {...state, playlists: temp}
+    case "DELETE_VIDEO_FROM_PLAYLIST":
+      const newPlaylist = action.payload
+      const findPlaylist = state.playlists.find((item)=>item._id===newPlaylist._id);
+      const newALlPlaylist = state.playlists.map((item)=>(item._id===findPlaylist._id)?newPlaylist:item);
+      return {...state, playlists: newALlPlaylist}
+
     default:
      return state;
   }
