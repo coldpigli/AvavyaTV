@@ -1,0 +1,102 @@
+.modalContainer{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--brand-color);
+    align-items: flex-start;
+    background-color: var(--background-dark);
+    width: 40%;
+    height: 60vh;
+    position: relative;
+}
+
+.showModal{
+    visibility: visible;
+}
+
+.hideModal{
+    visibility: hidden;}
+
+.heading{
+    width: 100%;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist{
+    display: flex;
+    width: 100%;
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.playlistItem{
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    background-color: var(--background-darkGrey);
+}
+
+.modalInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 100%;
+    width: 100%;
+}
+.modalInput input{
+    background-color: var(--background-dark);
+    outline: none;
+    border: 2px solid var(--brand-color);
+    height: 3rem;
+    padding: 0 0.5rem;
+    color: var(--font-primary);
+    width: 90%;
+}
+
+.addToExisting,
+.addNewPlaylist{
+    cursor: pointer;
+}
+
+.modalInput span{
+    font-size: 48px;
+}
+
+.playlist::-webkit-scrollbar {
+    width: 5px; 
+ }
+
+.playlist::webkit-scrollbar-track {
+  background-color: var(--background-dark);
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: var(--background-gray);
+  border-radius: 25px;
+}
+
+@media  only screen and  (max-width: 780px){
+    .modal{
+        width: 80%;
+        height: 40vh;
+    }
+}

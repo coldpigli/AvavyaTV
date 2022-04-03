@@ -9,6 +9,7 @@ import PlayVideo from "./PlayVideo/PlayVideo";
 import LoginPage from "./LoginPage/LoginPage";
 import MockMan from "./MockMan/MockMan";
 import SignupPage from "./SignupPage/SignupPage";
+import SinglePlaylist from "./SinglePlaylist/SinglePlaylist";
 
 export{
     Home,
@@ -21,5 +22,6 @@ export{
     PlayVideo,
     LoginPage,
     MockMan,
-    SignupPage
+    SignupPage,
+    SinglePlaylist
 }

@@ -28,6 +28,13 @@
     font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 600px){
+.saveBtn{
+    line-height: 0;
+}
 
+.dropdownItem{
+    display: flex;
+    justify-content: space-between;
+    width: 8rem;
+    padding: 0.8rem;
 }

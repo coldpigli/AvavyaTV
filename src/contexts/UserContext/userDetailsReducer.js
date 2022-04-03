@@ -49,6 +49,15 @@ const userDetailsReducer = (state, action) => {
       return {
         ...state, history: action.payload
       }
+    case "ADD_TO_PLAYLIST":
+      return {
+        ...state, playlists: action.payload
+      }
+    case "ADD_VIDEO_TO_PLAYLIST":
+      const playlist = action.payload
+      const whichPlaylist = state.playlists.find((item)=>item._id===playlist._id);
+      const temp = state.playlists.map((item)=>(item._id===whichPlaylist._id)?playlist:item);
+      return {...state, playlists: temp}
     default:
      return state;
   }

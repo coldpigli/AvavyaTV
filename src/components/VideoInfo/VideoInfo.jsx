@@ -5,7 +5,7 @@ import { checkLogin } from "../../utils";
 import { handleLikeVideo, handleUnlikeVideo } from "../../utils/handleLikeUnlike";
 import { addToWatchlater, removeFromWatchlater } from "../../utils/handleWatchLater";
 
-const VideoInfo = ({ videoMetaData }) => {
+const VideoInfo = ({ videoMetaData, setShowModal }) => {
   const [toggleDesc, setToggleDesc] = useState(false);
   const { category, creator, description, title } = videoMetaData;
   const { userState, dispatchUser } = useUserDetails();
@@ -28,7 +28,9 @@ const VideoInfo = ({ videoMetaData }) => {
   };
 
   const handleAddToPlaylist = () => {
-    //will update this
+    if(checkLogin(isLoggedIn)){
+      setShowModal(true);
+    }
   }
 
   return (
