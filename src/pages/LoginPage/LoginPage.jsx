@@ -16,8 +16,8 @@ const LoginPage = () => {
   });
 
   const testCredentials = {
-      email: "adarshbalika@gmail.com",
-      password: "adarshBalika123"
+    email: "piyushtest@gmail.com",
+    password: "adarshBalika123"
   }
 
   const loginGuest = () => {
