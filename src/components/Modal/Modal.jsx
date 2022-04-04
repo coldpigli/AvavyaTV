@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useUserDetails } from "../../contexts";
+import { toast } from "../../utils";
 import { addAPlaylist, addVideoToPlaylist } from "../../utils/handlePlaylists";
 import styles from "./Modal.module.css";
 
@@ -11,7 +12,11 @@ const Modal = ({ showModal, setShowModal, videoMetaData }) => {
   });
   const { isLoggedIn, playlists } = userState;
 
-  const handleAddingPlaylist = () => {
+  const handleAddingPlaylist = () => {  
+    if(newPlaylist.title===""){
+      toast({type:"error", message:"Playlist name cannot be empty"});
+      return;
+    }
     setNewPlaylist({ title: "", description: "" });
     addAPlaylist(newPlaylist, "authToken", isLoggedIn, dispatchUser);
   };
