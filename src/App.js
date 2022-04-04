@@ -1,7 +1,7 @@
 import "./App.css";
 import { SideNav } from "./components";
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import {
   ErrorPage,
   Explore,
@@ -13,6 +13,7 @@ import {
   Playlist,
   PlayVideo,
   SignupPage,
+  SinglePlaylist,
   WatchLater,
 } from "./pages";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/history" element={<History />} />
         <Route path="/liked" element={<Liked />} />
         <Route path="/playlist" element={<Playlist />} />
+        <Route path="/playlist/:playlistId" element={<SinglePlaylist/>} />
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage/>}/>

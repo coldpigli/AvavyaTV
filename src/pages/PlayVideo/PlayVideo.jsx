@@ -6,11 +6,13 @@ import { useState } from 'react';
 import { VideoInfo } from '../../components';
 import { useUserDetails, useVideos } from '../../contexts';
 import { addToHistory } from '../../utils/handleHistory';
+import Modal from '../../components/Modal/Modal';
 
 const PlayVideo = () => {
 
     const {videoId} = useParams();
     const [loading, setLoading] = useState(true);
+    const [showModal, setShowModal] = useState(false);
     const opts = {
         height: '390',
         width: '780',
@@ -53,9 +55,12 @@ const PlayVideo = () => {
         </div>
         <div className={`${styles.videoInfo}`}>
             {
-                loading ? null: <VideoInfo videoMetaData={getVideoMetaData(videoList)}/>
+                loading ? null: <VideoInfo videoMetaData={getVideoMetaData(videoList)} setShowModal={setShowModal}/>
             }
         </div>
+        {
+            loading ? null: <Modal showModal={showModal} setShowModal={setShowModal} videoMetaData={getVideoMetaData(videoList)}/>
+        }
     </div>
   )
 }

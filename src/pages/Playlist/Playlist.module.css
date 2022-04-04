@@ -1,0 +1,70 @@
+.playlistSection{
+    padding: 1rem;
+}
+
+.playlistHeading{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: center;
+}
+
+.playlistDisplay{
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.playlistItem{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    width: 20rem;
+    height: 10rem;
+    background-color: var(--brand-color);
+}
+
+.inputContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.addPlaylist{
+    background-color: var(--background-dark);
+    outline: none;
+    border: 2px solid var(--brand-color);
+    height: 3rem;
+    padding: 0 0.5rem;
+    color: var(--font-primary);
+}
+
+.addPlaylistBtn{
+    cursor: pointer;
+    background-color: var(--brand-color);
+    color: var(--font-primary);
+    font-size: 3rem;
+}
+
+
+@media only screen and (max-width: 780px){
+    .playlistHeading button{
+        margin: 0 auto;
+    }
+    .playlistItem{
+        font-size: 1rem;
+        width: 10rem;
+        height: 5rem;
+    }
+    .inputContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
