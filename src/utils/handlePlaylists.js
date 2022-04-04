@@ -21,7 +21,7 @@ const addAPlaylist = async (playlistData, tokenName, isLoggedIn, dispatchUser) =
         }
       } catch (err) {
         console.log("Something bad happened", err);
-        toast({type:"error", message: "Couldn't complete the reuqest"})
+        toast({type:"error", message: "Couldn't complete the request"})
       }
     }
   };
@@ -45,7 +45,7 @@ const addAPlaylist = async (playlistData, tokenName, isLoggedIn, dispatchUser) =
         }
       } catch (err) {
         console.log("Something bad happened", err);
-        toast({type:"error", message: "Couldn't complete the reuqest"})
+        toast({type:"error", message: "Couldn't complete the request"})
       }
     }
   };
@@ -68,7 +68,7 @@ const addAPlaylist = async (playlistData, tokenName, isLoggedIn, dispatchUser) =
         }
       } catch (err) {
         console.log("Something bad happened", err);
-        toast({type:"error", message: "Couldn't complete the reuqest"})
+        toast({type:"error", message: "Couldn't complete the request"})
       }
     }
   };
@@ -91,7 +91,7 @@ const addAPlaylist = async (playlistData, tokenName, isLoggedIn, dispatchUser) =
         }
       } catch (err) {
         console.log("Something bad happened", err);
-        toast({type:"error", message: "Couldn't complete the reuqest"})
+        toast({type:"error", message: "Couldn't complete the request"})
       }
     }
   };
