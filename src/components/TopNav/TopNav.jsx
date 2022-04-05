@@ -11,7 +11,7 @@ const TopNav = () => {
   return (
     <div className={`${styles.topnav} flex`}>
       <div className={`${styles.logoContainer} flex`}>
-        <h2 className="txt-bold">avavyaTV</h2>
+        <Link to="/" className="txt-bold heading1">avavyaTV</Link>
       </div>
       {isLoggedIn ? (
         <div className={`flex children-middle`}>

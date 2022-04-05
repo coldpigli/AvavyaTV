@@ -10,7 +10,6 @@
 .likedLeft{
     width: 30%;
     gap: 1rem;
-    height: 30vh;
     background-color: var(--brand-color);
     padding: 2rem;
     border-radius: var(--radius-sm);

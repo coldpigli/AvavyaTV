@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RedirectToLogin, TopNav } from "../../components";
 import { useUserDetails } from "../../contexts";
-import { checkLogin } from "../../utils";
+import { checkLogin, toast } from "../../utils";
 import { addAPlaylist } from "../../utils/handlePlaylists";
 import styles from "./Playlist.module.css";
 
@@ -15,6 +15,10 @@ const Playlist = () => {
     description: "",
   });
   const handleAddingPlaylist = () => {
+    if(newPlaylist.title===""){
+      toast({type:"error",message:"Playlist name cannot be empty"});
+      return;
+    }
     setInputActive(false);
     setNewPlaylist({ title: "", description: "" });
     addAPlaylist(newPlaylist, "authToken", isLoggedIn, dispatchUser);
