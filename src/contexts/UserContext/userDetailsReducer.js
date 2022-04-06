@@ -1,6 +1,7 @@
 const userDetailsReducer = (state, action) => {
   switch (action.type) {
     case "USER_LOGIN":
+      console.log(action.payload);
       const { firstName, history, likes, playlists, watchlater } = action.payload;
       return {
         ...state,

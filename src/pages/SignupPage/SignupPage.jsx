@@ -39,6 +39,7 @@ const SignupPage = () => {
         const response = await axios.post("/api/auth/signup", signupData);
         if (response.status === 200 || response.status === 201) {
           const { createdUser, encodedToken } = response.data;
+          console.log("new token", {encodedToken});
           localStorage.setItem("authToken",encodedToken)
           dispatchUser({ type: "USER_LOGIN", payload: createdUser });
           navigate("/explore/All");

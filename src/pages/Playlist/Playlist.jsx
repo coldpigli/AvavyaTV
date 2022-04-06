@@ -63,10 +63,10 @@ const Playlist = () => {
               )}
             </div>
             <div className={`${styles.playlistDisplay}`}>
-              {playlists.map((playlist) => {
+              {playlists?.map((playlist) => {
                 return (
                   <Link to={`/playlist/${playlist._id}`} className={`${styles.playlistItem}`}>
-                    {playlist.title}
+                    {playlist?.title}
                   </Link>
                 );
               })}

@@ -57,7 +57,7 @@ const Modal = ({ showModal, setShowModal, videoMetaData }) => {
               <div className={`${styles.playlistItem} flex`}>
                 <span
                   className={`material-icons md-24 txt-gray ${styles.addToExisting} ${findIfVideoInPlaylist(item)?"brand-color": ""}`}
-                  onClick={() => handleAddingVideo(item._id)}
+                  onClick={() => findIfVideoInPlaylist(item)?toast({type: "error", message: "Already added to playlist"}):handleAddingVideo(item._id)}
                 >
                   {findIfVideoInPlaylist(item)?"check_circle":"add_circle"}
                 </span>

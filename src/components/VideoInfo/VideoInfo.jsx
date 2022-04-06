@@ -13,11 +13,11 @@ const VideoInfo = ({ videoMetaData, setShowModal }) => {
   
 
   const findIfLiked = (video) => {
-      return likes.find((item)=>video._id===item._id)
+      return likes?.find((item)=>video._id===item._id)
   }
 
   const findIfWatchlater = (video) => {
-    return watchlater.find((item)=>video._id===item._id)
+    return watchlater?.find((item)=>video._id===item._id)
   }
 
 
