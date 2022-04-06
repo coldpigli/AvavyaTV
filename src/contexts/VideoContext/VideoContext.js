@@ -8,6 +8,7 @@ const useVideos = () => useContext(VideoContext);
 
 const VideoProvider = ({ children }) => {
   const { responseData, isLoading, errorFlag } = useAxios("/api/videos");
+  console.log({errorFlag});
   const [videoState, videoDispatch] = useReducer(videoReducer, {
       videoList: []
   });

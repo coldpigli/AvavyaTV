@@ -27,7 +27,7 @@ const PlayVideo = () => {
     const { videoList } = videoState;
 
     const getVideoMetaData = (videoList) => {
-        return videoList.find((item)=>item.videoId===videoId);
+        return videoList?.find((item)=>item.videoId===videoId);
     }
 
     const handleOnReady = () => {

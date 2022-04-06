@@ -19,11 +19,11 @@ const Liked = () => {
           <section className={`${styles.likedSection} flex wrap`}>
               <div className={`${styles.likedLeft} flex-vertical`}>
                   <h1 className={`heading1 dark-font`}>See what you've liked <span className={`day-font`}>{firstName}</span></h1>
-                  <p className={`paragraph1`}>So far you've liked <span className={`dark-font`}>{likes.length}</span> of our videos</p>
+                  <p className={`paragraph1`}>So far you've liked <span className={`dark-font`}>{likes?.length}</span> of our videos</p>
               </div>
               <div className={`${styles.likedRight} flex-vertical`}>
                 {
-                  likes.map((item)=><HorizontalVideoCard video={item} handleClickAction={handleUnlikeVideo}/>)
+                  likes?.map((item)=><HorizontalVideoCard video={item} handleClickAction={handleUnlikeVideo}/>)
                 }
               </div>
           </section>
